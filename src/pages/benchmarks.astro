@@ -6,23 +6,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="hero-page">
     <div class="orb orb-tertiary" style="bottom: -10%; left: 30%; width: 350px; height: 350px;"></div>
     <div class="container">
-      <span class="section-label">Resultados</span>
+      <span class="section-label">Results</span>
       <h1 class="hero-page-title">
         <span class="gradient-text">Benchmarks</span>
       </h1>
       <p class="hero-page-subtitle">
-        Datos duros. Resultados reproducibles. Cada afirmación está respaldada por
-        mediciones que puedes verificar tú mismo.
+        Hard data. Reproducible results. Every claim is backed by
+        measurements you can verify yourself.
       </p>
     </div>
   </div>
 
   <section class="section">
     <div class="container">
-      <span class="section-label">Rendimiento</span>
+      <span class="section-label">Performance</span>
       <h2 class="section-title">Orion vs <span class="gradient-text">llama.cpp</span></h2>
       <p class="section-subtitle" style="margin-bottom: 48px;">
-        Comparativa en inferencia con modelos de 7B parámetros en cuantización Q4_K_M.
+        Inference comparison with 7B parameter models in Q4_K_M quantization.
         Hardware: Ryzen 7950X, 32GB DDR5.
       </p>
 
@@ -30,33 +30,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <table class="bench-table">
           <thead>
             <tr>
-              <th>Métrica</th>
+              <th>Metric</th>
               <th>llama.cpp</th>
               <th>Orion Engine</th>
-              <th>Mejora</th>
+              <th>Improvement</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Tokens/seg (inferencia)</td>
+              <td>Tokens/sec (inference)</td>
               <td class="old">32.4</td>
               <td class="new">1,069.2</td>
               <td class="diff">33.0×</td>
             </tr>
             <tr>
-              <td>Memoria (GB)</td>
+              <td>Memory (GB)</td>
               <td class="old">6.8</td>
               <td class="new">4.2</td>
-              <td class="diff">38% menos</td>
+              <td class="diff">38% less</td>
             </tr>
             <tr>
-              <td>Latencia primer token (ms)</td>
+              <td>First token latency (ms)</td>
               <td class="old">284</td>
               <td class="new">42</td>
               <td class="diff">6.8×</td>
             </tr>
             <tr>
-              <td>Tiempo de carga (ms)</td>
+              <td>Load time (ms)</td>
               <td class="old">1,240</td>
               <td class="new">180</td>
               <td class="diff">6.9×</td>
@@ -68,7 +68,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <td class="diff">26.4×</td>
             </tr>
             <tr>
-              <td>Precisión (MMLU)</td>
+              <td>Accuracy (MMLU)</td>
               <td class="old">62.4%</td>
               <td class="new">62.8%</td>
               <td class="diff">+0.4%</td>
@@ -81,10 +81,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="section section-bench-detail">
     <div class="container">
-      <span class="section-label">Entrenamiento</span>
-      <h2 class="section-title">Rendimiento de <span class="gradient-text">Entrenamiento</span></h2>
+      <span class="section-label">Training</span>
+      <h2 class="section-title">Training <span class="gradient-text">Performance</span></h2>
       <p class="section-subtitle" style="margin-bottom: 48px;">
-        Entrenamiento de un modelo pequeño (350M parámetros) en hardware de consumo.
+        Training a small model (350M parameters) on consumer hardware.
       </p>
       <div class="table-wrapper">
         <table class="bench-table">
@@ -93,7 +93,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <th>Hardware</th>
               <th>llama.cpp</th>
               <th>Orion Engine</th>
-              <th>Mejora</th>
+              <th>Improvement</th>
             </tr>
           </thead>
           <tbody>
@@ -119,8 +119,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </table>
       </div>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 16px; text-align: center;">
-        * Datos preliminares. Resultados pueden variar según configuración. Próximamente
-        publicaremos la metodología completa para reproducibilidad.
+        * Preliminary data. Results may vary based on configuration. Full methodology
+        for reproducibility coming soon.
       </p>
     </div>
   </section>
