@@ -3,113 +3,81 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Zenith Models">
-  <div class="hero-page">
-    <div class="orb orb-secondary" style="top: -10%; left: -5%; width: 400px; height: 400px;"></div>
-    <div class="container">
-      <span class="section-label">Open Source Models</span>
-      <h1 class="hero-page-title">
+  <section class="hero-pg">
+    <div class="container hero-pg-inner">
+      <div class="gradient-line"></div>
+      <span class="section-label">Open Source</span>
+      <h1 class="hero-pg-title">
         Zenith <span class="gradient-text">Models</span>
       </h1>
-      <p class="hero-page-subtitle">
-        AI models trained on a regular laptop to prove that Orion
-        democratizes access to artificial intelligence. No clusters, no
-        supercomputers — just efficient code.
+      <p class="hero-pg-sub">
+        AI models trained on a laptop — proving Orion democratizes access
+        to artificial intelligence. No clusters, just efficient code.
       </p>
-      <div class="hero-page-actions">
-        <a href="https://github.com/Solari-Labs/zenith" class="btn btn-primary" target="_blank" rel="noopener">
-          GitHub <span>→</span>
-        </a>
-        <a href="/orion" class="btn btn-secondary">
-          Meet Orion
-        </a>
+      <div class="hero-pg-actions">
+        <a href="https://github.com/Solari-Labs/zenith" class="btn btn-primary" target="_blank">GitHub →</a>
+        <a href="/orion" class="btn btn-secondary">Meet Orion</a>
       </div>
     </div>
-  </div>
+  </section>
 
   <section class="section">
     <div class="container">
-      <span class="section-label">The Collection</span>
-      <h2 class="section-title"><span class="gradient-text">.orion</span> Models</h2>
-      <p class="section-subtitle" style="margin-bottom: 48px;">
-        Every Zenith model is available in <code style="color:var(--accent)">.orion</code> format,
-        ready to load and run with Orion Engine.
-      </p>
-      <div class="model-grid">
-        <div class="model-card card">
-          <div class="model-card-header">
-            <span class="model-badge">Flagship</span>
-            <span class="model-size">1.2B</span>
+      <div class="cols-3">
+        <div class="col">
+          <div class="col-h">
+            <span class="col-badge">Flagship</span>
+            <span class="col-size">1.2B</span>
           </div>
           <h3>Zenith-1B</h3>
-          <p>General-purpose model with performance comparable to traditional 7B models, thanks to Orion's efficiency.</p>
-          <div class="model-meta">
+          <p>Matches 7B model performance thanks to Orion's efficiency.</p>
+          <div class="col-meta">
             <span>Trained in 48h</span>
-            <span>Laptop RTX 4060</span>
-          </div>
-          <div class="model-actions">
-            <a href="#" class="btn btn-secondary" style="flex:1;justify-content:center;">Download</a>
+            <span>RTX 4060 Laptop</span>
           </div>
         </div>
-        <div class="model-card card">
-          <div class="model-card-header">
-            <span class="model-badge">Code</span>
-            <span class="model-size">350M</span>
+        <div class="col">
+          <div class="col-h">
+            <span class="col-badge col-badge--code">Code</span>
+            <span class="col-size">350M</span>
           </div>
           <h3>Zenith-Coder</h3>
-          <p>Specialized in code generation and comprehension. Trained on GitHub with high-quality filtering.</p>
-          <div class="model-meta">
+          <p>Specialized in code generation. Trained on high-quality GitHub data.</p>
+          <div class="col-meta">
             <span>Trained in 24h</span>
-            <span>Laptop RTX 4060</span>
-          </div>
-          <div class="model-actions">
-            <a href="#" class="btn btn-secondary" style="flex:1;justify-content:center;">Download</a>
+            <span>RTX 4060 Laptop</span>
           </div>
         </div>
-        <div class="model-card card">
-          <div class="model-card-header">
-            <span class="model-badge">Math</span>
-            <span class="model-size">700M</span>
+        <div class="col">
+          <div class="col-h">
+            <span class="col-badge col-badge--math">Math</span>
+            <span class="col-size">700M</span>
           </div>
           <h3>Zenith-Math</h3>
-          <p>Mathematical reasoning and problem solving. Outperforms models 5x larger on GSM8K benchmarks.</p>
-          <div class="model-meta">
+          <p>Outperforms models 5× larger on GSM8K benchmarks.</p>
+          <div class="col-meta">
             <span>Trained in 36h</span>
-            <span>Laptop RTX 4060</span>
-          </div>
-          <div class="model-actions">
-            <a href="#" class="btn btn-secondary" style="flex:1;justify-content:center;">Download</a>
+            <span>RTX 4060 Laptop</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-zenith-demo">
+  <section class="section section-alt">
     <div class="container">
-      <div class="demo-content">
-        <span class="section-label">Seeing is Believing</span>
+      <div class="specs">
+        <div class="gradient-line"></div>
+        <span class="section-label">Proof</span>
         <h2 class="section-title">Trained on a <span class="gradient-text">laptop</span></h2>
-        <p class="section-subtitle">
-          It's that simple. We plugged in a laptop with an RTX 4060, compiled Orion,
-          and trained functional models. The same code you use.
+        <p class="section-text">
+          A laptop with an RTX 4060. Orion compiled. Functional models in 48 hours.
         </p>
-        <div class="specs-list">
-          <div class="spec-item">
-            <span class="spec-key">Hardware</span>
-            <span class="spec-value">Laptop with RTX 4060 8GB</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-key">Time</span>
-            <span class="spec-value">24 – 48 hours per model</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-key">Framework</span>
-            <span class="spec-value">Orion Engine (C)</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-key">Cost</span>
-            <span class="spec-value">~$5 USD in electricity</span>
-          </div>
+        <div class="specs-table">
+          <div class="spec-row"><span>Hardware</span><span>Laptop RTX 4060 8GB</span></div>
+          <div class="spec-row"><span>Time</span><span>24–48 hours per model</span></div>
+          <div class="spec-row"><span>Framework</span><span>Orion Engine (C)</span></div>
+          <div class="spec-row"><span>Cost</span><span>~$5 USD electricity</span></div>
         </div>
       </div>
     </div>
@@ -117,93 +85,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style is:global>
-.model-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.col-h {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;
 }
-.model-card {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.model-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.model-badge {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 4px 10px;
-  border-radius: 4px;
-  background: var(--accent);
-  color: white;
-}
-.model-badge:nth-of-type(2) { background: var(--accent-secondary); color: var(--bg); }
-.model-badge:nth-of-type(3) { background: var(--accent-tertiary); color: white; }
-.model-size {
+.col-badge {
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.5rem;
-  color: var(--text-primary);
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px; border-radius: 4px;
+  background: var(--accent); color: var(--bg);
 }
-.model-card h3 {
-  font-size: 1.25rem;
+.col-badge--code { background: var(--accent-secondary); color: var(--bg); }
+.col-badge--math { background: #D65A28; color: white; }
+.col-size {
+  font-family: var(--font-heading); font-weight: 800; font-size: 1.25rem;
 }
-.model-card > p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  flex: 1;
+.col-meta {
+  display: flex; gap: 1rem; margin-top: 1rem;
+  font-size: 0.8rem; color: var(--text-muted);
 }
-.model-meta {
-  display: flex;
-  gap: 16px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-.model-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: auto;
-}
-.section-zenith-demo {
-  background: var(--bg-elevated);
-  border-top: 1px solid var(--border);
-}
-.demo-content {
-  max-width: 700px;
-}
-.specs-list {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.specs { max-width: 560px; }
+.specs-table {
+  margin-top: 1.5rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   overflow: hidden;
 }
-.spec-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 24px;
+.spec-row {
+  display: flex; justify-content: space-between;
+  padding: 0.75rem 1.25rem;
   border-bottom: 1px solid var(--border);
-}
-.spec-item:last-child { border-bottom: none; }
-.spec-key {
-  color: var(--text-muted);
   font-size: 0.85rem;
 }
-.spec-value {
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-@media (max-width: 768px) {
-  .model-grid { grid-template-columns: 1fr; }
-}
+.spec-row:last-child { border-bottom: none; }
+.spec-row span:first-child { color: var(--text-muted); }
+.spec-row span:last-child { font-weight: 600; }
 </style>

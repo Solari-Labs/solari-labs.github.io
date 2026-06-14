@@ -1,105 +1,54 @@
 <footer class="footer">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <span class="logo-icon">☀</span>
-          <span class="logo-text">Solari<span class="logo-accent">Labs</span></span>
-        </div>
-        <p class="footer-tagline">Powering the next AI revolution</p>
-        <p class="footer-location">México</p>
+    <div class="f-grid">
+      <div class="f-brand">
+        <img src="/logo.png" alt="" width="24" height="24" class="f-logo-img" />
+        <span>Solari Labs</span>
+        <p class="f-tag">Powering the next AI revolution</p>
       </div>
-      <div class="footer-links">
-        <h4>Product</h4>
-        <a href="/orion">Orion Engine</a>
-        <a href="/zenith">Zenith Models</a>
+      <div class="f-links">
+        <span class="f-h">Product</span>
+        <a href="/orion">Orion</a>
+        <a href="/zenith">Zenith</a>
         <a href="/benchmarks">Benchmarks</a>
       </div>
-      <div class="footer-links">
-        <h4>Company</h4>
+      <div class="f-links">
+        <span class="f-h">Company</span>
         <a href="/contact">Contact</a>
-        <a href="https://github.com/Solari-Labs" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <div class="footer-links">
-        <h4>Legal</h4>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
+        <a href="https://github.com/Solari-Labs" target="_blank">GitHub</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; {new Date().getFullYear()} Solari Labs. All rights reserved.</p>
-    </div>
+    <p class="f-copy">© {new Date().getFullYear()} Solari Labs</p>
   </div>
 </footer>
 
 <style is:global>
 .footer {
   border-top: 1px solid var(--border);
-  padding: 80px 0 40px;
+  padding: 3rem 0 2rem;
   background: var(--bg-elevated);
 }
-.footer-grid {
+.f-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
 }
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  color: var(--text-primary);
+.f-brand {
+  display: flex; flex-direction: column; gap: 6px;
+  font-family: var(--font-heading); font-weight: 700;
 }
-.footer-logo .logo-accent { color: var(--accent); }
-.footer-tagline {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 8px;
+.f-logo-img { border-radius: 50%; }
+.f-tag { font-family: var(--font-body); font-weight: 400; font-size: 0.85rem; color: var(--text-muted); }
+.f-h {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--text-muted); margin-bottom: 0.75rem; display: block;
 }
-.footer-location {
-  color: var(--text-muted);
-  font-size: 0.85rem;
+.f-links a {
+  display: block; font-size: 0.85rem; color: var(--text); padding: 3px 0;
+  transition: opacity 0.2s;
 }
-.footer-links h4 {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  margin-bottom: 16px;
-}
-.footer-links a {
-  display: block;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  padding: 4px 0;
-  transition: color 0.2s;
-}
-.footer-links a:hover {
-  color: var(--accent);
-}
-.footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 24px;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-@media (max-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-  .footer-brand { grid-column: 1 / -1; }
-}
-@media (max-width: 480px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-}
+.f-links a:hover { opacity: 0.6; }
+.f-copy { font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 1.5rem; }
+@media (max-width: 600px) { .f-grid { grid-template-columns: 1fr; gap: 2rem; } }
 </style>

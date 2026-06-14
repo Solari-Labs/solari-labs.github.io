@@ -2,31 +2,28 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ThemeScript from '../components/ThemeScript.astro';
 
 export interface Props {
   title: string;
-  description?: string;
 }
 
-const { title, description } = Astro.props;
+const { title } = Astro.props;
 ---
+
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | Solari Labs</title>
-    <meta name="description" content={description || 'Powering the next AI revolution'} />
-    <meta name="theme-color" content="#080605" />
+    <title>{title} — Solari Labs</title>
+    <meta name="description" content="Powering the next AI revolution" />
+    <meta name="theme-color" content="#070504" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <ThemeScript />
+    <script>const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);</script>
   </head>
   <body>
     <Header />
-    <main>
-      <slot />
-    </main>
+    <main><slot /></main>
     <Footer />
   </body>
 </html>
