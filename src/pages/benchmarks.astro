@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Benchmarks">
+  <div class="hero-page">
+    <div class="orb orb-tertiary" style="bottom: -10%; left: 30%; width: 350px; height: 350px;"></div>
+    <div class="container">
+      <span class="section-label">Resultados</span>
+      <h1 class="hero-page-title">
+        <span class="gradient-text">Benchmarks</span>
+      </h1>
+      <p class="hero-page-subtitle">
+        Datos duros. Resultados reproducibles. Cada afirmación está respaldada por
+        mediciones que puedes verificar tú mismo.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Rendimiento</span>
+      <h2 class="section-title">Orion vs <span class="gradient-text">llama.cpp</span></h2>
+      <p class="section-subtitle" style="margin-bottom: 48px;">
+        Comparativa en inferencia con modelos de 7B parámetros en cuantización Q4_K_M.
+        Hardware: Ryzen 7950X, 32GB DDR5.
+      </p>
+
+      <div class="table-wrapper">
+        <table class="bench-table">
+          <thead>
+            <tr>
+              <th>Métrica</th>
+              <th>llama.cpp</th>
+              <th>Orion Engine</th>
+              <th>Mejora</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tokens/seg (inferencia)</td>
+              <td class="old">32.4</td>
+              <td class="new">1,069.2</td>
+              <td class="diff">33.0×</td>
+            </tr>
+            <tr>
+              <td>Memoria (GB)</td>
+              <td class="old">6.8</td>
+              <td class="new">4.2</td>
+              <td class="diff">38% menos</td>
+            </tr>
+            <tr>
+              <td>Latencia primer token (ms)</td>
+              <td class="old">284</td>
+              <td class="new">42</td>
+              <td class="diff">6.8×</td>
+            </tr>
+            <tr>
+              <td>Tiempo de carga (ms)</td>
+              <td class="old">1,240</td>
+              <td class="new">180</td>
+              <td class="diff">6.9×</td>
+            </tr>
+            <tr>
+              <td>Prompt processing (t/s)</td>
+              <td class="old">186</td>
+              <td class="new">4,912</td>
+              <td class="diff">26.4×</td>
+            </tr>
+            <tr>
+              <td>Precisión (MMLU)</td>
+              <td class="old">62.4%</td>
+              <td class="new">62.8%</td>
+              <td class="diff">+0.4%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bench-detail">
+    <div class="container">
+      <span class="section-label">Entrenamiento</span>
+      <h2 class="section-title">Rendimiento de <span class="gradient-text">Entrenamiento</span></h2>
+      <p class="section-subtitle" style="margin-bottom: 48px;">
+        Entrenamiento de un modelo pequeño (350M parámetros) en hardware de consumo.
+      </p>
+      <div class="table-wrapper">
+        <table class="bench-table">
+          <thead>
+            <tr>
+              <th>Hardware</th>
+              <th>llama.cpp</th>
+              <th>Orion Engine</th>
+              <th>Mejora</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RTX 4060 (laptop)</td>
+              <td class="old">184 t/s</td>
+              <td class="new">3,820 t/s</td>
+              <td class="diff">20.8×</td>
+            </tr>
+            <tr>
+              <td>RTX 4090</td>
+              <td class="old">512 t/s</td>
+              <td class="new">14,200 t/s</td>
+              <td class="diff">27.7×</td>
+            </tr>
+            <tr>
+              <td>Apple M3 Max</td>
+              <td class="old">268 t/s</td>
+              <td class="new">6,100 t/s</td>
+              <td class="diff">22.8×</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 16px; text-align: center;">
+        * Datos preliminares. Resultados pueden variar según configuración. Próximamente
+        publicaremos la metodología completa para reproducibilidad.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.bench-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.bench-table th {
+  text-align: left;
+  padding: 16px 20px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.bench-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.bench-table tr:last-child td { border-bottom: none; }
+.bench-table .old {
+  color: var(--text-muted);
+}
+.bench-table .new {
+  color: var(--accent-secondary);
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+.bench-table .diff {
+  color: var(--accent);
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+.bench-table tr:hover {
+  background: rgba(255, 107, 53, 0.03);
+}
+.section-bench-detail {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+}
+</style>

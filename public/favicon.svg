@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35"/>
+      <stop offset="50%" stop-color="#FFB347"/>
+      <stop offset="100%" stop-color="#FF4444"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="45" fill="url(#g)" opacity="0.15"/>
+  <circle cx="50" cy="50" r="35" fill="url(#g)" opacity="0.3"/>
+  <circle cx="50" cy="50" r="20" fill="url(#g)"/>
+  <circle cx="50" cy="50" r="8" fill="#fff" opacity="0.8"/>
+  <line x1="50" y1="15" x2="50" y2="25" stroke="#FFB347" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="50" y1="75" x2="50" y2="85" stroke="#FFB347" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="15" y1="50" x2="25" y2="50" stroke="#FFB347" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="75" y1="50" x2="85" y2="50" stroke="#FFB347" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="27" y1="27" x2="34" y2="34" stroke="#FFB347" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="66" y1="66" x2="73" y2="73" stroke="#FFB347" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="27" y1="73" x2="34" y2="66" stroke="#FFB347" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="66" y1="34" x2="73" y2="27" stroke="#FFB347" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+</svg>

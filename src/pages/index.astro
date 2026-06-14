@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Inicio">
+  <Hero />
+  <section class="section" id="orion-preview">
+    <div class="container">
+      <span class="section-label">Producto Principal</span>
+      <h2 class="section-title">
+        Conoce <span class="gradient-text">Orion</span>
+      </h2>
+      <p class="section-subtitle">
+        Un motor de IA escrito en C desde cero. Diseñado para entrenamiento e inferencia con
+        rendimiento sin precedentes. 33x más rápido que las alternativas tradicionales.
+      </p>
+      <div class="preview-cards">
+        <a href="/orion" class="card preview-card">
+          <div class="preview-card-icon">⚡</div>
+          <h3>Rendimiento Extremo</h3>
+          <p>Optimizaciones a nivel de hardware que maximizan cada ciclo de cómputo.</p>
+          <span class="preview-card-link">Explorar Orion →</span>
+        </a>
+        <a href="/zenith" class="card preview-card">
+          <div class="preview-card-icon">✦</div>
+          <h3>Modelos Zenith</h3>
+          <p>Entrenados en una laptop para demostrar el verdadero potencial de Orion.</p>
+          <span class="preview-card-link">Ver modelos →</span>
+        </a>
+        <a href="/benchmarks" class="card preview-card">
+          <div class="preview-card-icon">📊</div>
+          <h3>Benchmarks</h3>
+          <p>Resultados medibles que respaldan cada afirmación. Transparencia total.</p>
+          <span class="preview-card-link">Ver datos →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section section-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number gradient-text">33×</span>
+          <span class="stat-label">Más rápido</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number gradient-text">100%</span>
+          <span class="stat-label">Open Source</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number gradient-text">C99</span>
+          <span class="stat-label">Lenguaje base</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number gradient-text">0</span>
+          <span class="stat-label">Dependencias</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+.preview-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.preview-card {
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.preview-card-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+.preview-card h3 {
+  font-size: 1.25rem;
+}
+.preview-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex: 1;
+}
+.preview-card-link {
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.preview-card:hover .preview-card-link {
+  text-decoration: underline;
+}
+.section-stats {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .preview-cards {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+</style>

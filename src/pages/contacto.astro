@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contacto">
+  <div class="hero-page">
+    <div class="orb orb-primary" style="top: -15%; right: -5%; width: 450px; height: 450px;"></div>
+    <div class="orb orb-secondary" style="bottom: -10%; left: -5%; width: 300px; height: 300px;"></div>
+    <div class="container">
+      <span class="section-label">Conecta</span>
+      <h1 class="hero-page-title">
+        Hablemos <span class="gradient-text">→</span>
+      </h1>
+      <p class="hero-page-subtitle">
+        ¿Quieres probar Orion? ¿Colaborar en un modelo Zenith? ¿Tienes preguntas?
+        Estamos construyendo el futuro de la IA — y queremos que seas parte.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card card">
+            <span class="contact-icon">📧</span>
+            <h3>Email</h3>
+            <a href="mailto:hello@solari-labs.com">hello@solari-labs.com</a>
+          </div>
+          <div class="contact-card card">
+            <span class="contact-icon">💬</span>
+            <h3>Discord</h3>
+            <p>Únete a nuestra comunidad</p>
+            <a href="#">Próximamente</a>
+          </div>
+          <div class="contact-card card">
+            <span class="contact-icon">🐙</span>
+            <h3>GitHub</h3>
+            <a href="https://github.com/Solari-Labs" target="_blank" rel="noopener">github.com/Solari-Labs</a>
+          </div>
+          <div class="contact-card card">
+            <span class="contact-icon">📍</span>
+            <h3>Ubicación</h3>
+            <p>México</p>
+          </div>
+        </div>
+        <form class="contact-form card" id="contactForm">
+          <h3 style="margin-bottom: 24px;">Envíanos un mensaje</h3>
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="subject">Asunto</label>
+            <select id="subject" name="subject">
+              <option value="orion">Orion Engine</option>
+              <option value="zenith">Zenith Models</option>
+              <option value="colaboracion">Colaboración</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            Enviar Mensaje <span>→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 48px;
+  align-items: start;
+}
+.contact-info {
+  display: grid;
+  gap: 16px;
+}
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.contact-card h3 {
+  font-size: 1rem;
+}
+.contact-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.contact-card a {
+  color: var(--accent);
+  font-weight: 500;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.form-group label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.form-group textarea {
+  resize: vertical;
+}
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+  document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Gracias por tu mensaje. Te contactaremos pronto.');
+  });
+</script>

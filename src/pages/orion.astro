@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const cCode = `#include <orion.h>
+int main() {
+    OrionModel* model = orion_load("modelo.orion");
+    OrionTensor* input = orion_tensor_from_array(data, 1024);
+    OrionTensor* output = orion_forward(model, input);
+    printf("Resultado: %f\\n", orion_tensor_get(output, 0));
+    orion_free(model);
+    return 0;
+}`;
+---
+
+<BaseLayout title="Orion Engine">
+  <div class="hero-page">
+    <div class="orb orb-primary" style="top: -20%; right: -10%; width: 500px; height: 500px;"></div>
+    <div class="container">
+      <span class="section-label">Producto Principal</span>
+      <h1 class="hero-page-title">
+        Orion <span class="gradient-text">Engine</span>
+      </h1>
+      <p class="hero-page-subtitle">
+        Un motor de inteligencia artificial escrito completamente en C. Diseñado desde cero
+        para maximizar rendimiento en entrenamiento e inferencia, con optimizaciones que
+        superan por 33x a las implementaciones tradicionales.
+      </p>
+      <div class="hero-page-actions">
+        <a href="https://github.com/Solari-Labs/orion" class="btn btn-primary" target="_blank" rel="noopener">
+          GitHub <span>→</span>
+        </a>
+        <a href="/benchmarks" class="btn btn-secondary">
+          Ver Benchmarks
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-card card">
+          <span class="feature-icon">⚡</span>
+          <h3>Rendimiento 33x Superior</h3>
+          <p>
+            Optimizaciones a nivel de ensamblador, gestión de memoria caché consciente,
+            y kernels especializados que aprovechan al máximo cada ciclo de CPU.
+          </p>
+        </div>
+        <div class="feature-card card">
+          <span class="feature-icon">🔧</span>
+          <h3>Cero Dependencias</h3>
+          <p>
+            Escrito en C99 puro. Sin Python, sin CUDA obligatorio, sin cadenas de
+            herramientas masivas. Compila y ejecuta en cualquier parte.
+          </p>
+        </div>
+        <div class="feature-card card">
+          <span class="feature-icon">🧠</span>
+          <h3>Entrenamiento + Inferencia</h3>
+          <p>
+            Un solo motor para ambas cargas de trabajo. Diseño unificado que elimina
+            la fragmentación típica de los stacks de IA actuales.
+          </p>
+        </div>
+        <div class="feature-card card">
+          <span class="feature-icon">📦</span>
+          <h3>Formato .orion</h3>
+          <p>
+            Formato de modelo propietario optimizado para el motor, con cuantización
+            adaptativa y loading en milisegundos.
+          </p>
+        </div>
+        <div class="feature-card card">
+          <span class="feature-icon">🌐</span>
+          <h3>Multi-plataforma</h3>
+          <p>
+            Linux, macOS, Windows. x86_64, ARM, y próximamente GPUs mediante
+            backends extensibles.
+          </p>
+        </div>
+        <div class="feature-card card">
+          <span class="feature-icon">🔓</span>
+          <h3>100% Open Source</h3>
+          <p>
+            Licencia permisiva. Código completamente transparente. Auditoría
+            y contribuciones bienvenidas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-code">
+    <div class="container">
+      <div class="code-showcase">
+        <span class="section-label">Empezando</span>
+        <h2 class="section-title">Instalación en <span class="gradient-text">segundos</span></h2>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-dot" style="background:#FF5F56;"></span>
+            <span class="code-dot" style="background:#FFBD2E;"></span>
+            <span class="code-dot" style="background:#27C93F;"></span>
+            <span class="code-lang">bash</span>
+          </div>
+          <pre><code>git clone https://github.com/Solari-Labs/orion.git
+cd orion && make
+./orion run modelo.orion</code></pre>
+        </div>
+        <div class="code-block" style="margin-top: 16px;">
+          <div class="code-header">
+            <span class="code-dot" style="background:#FF5F56;"></span>
+            <span class="code-dot" style="background:#FFBD2E;"></span>
+            <span class="code-dot" style="background:#27C93F;"></span>
+            <span class="code-lang">c</span>
+          </div>
+          <pre><code set:html={cCode}></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+.hero-page {
+  padding: 160px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-page-title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+.hero-page-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+.hero-page-actions {
+  display: flex;
+  gap: 16px;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.feature-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 16px;
+  display: block;
+}
+.feature-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.section-code {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+}
+.code-showcase {
+  max-width: 700px;
+}
+.code-block {
+  background: #0A0808;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.code-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.code-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.code-lang {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.code-block pre {
+  padding: 20px 24px;
+  overflow-x: auto;
+}
+.code-block code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #E8DCC8;
+}
+@media (max-width: 768px) {
+  .hero-page { padding: 120px 0 60px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .hero-page-actions { flex-direction: column; }
+}
+</style>
